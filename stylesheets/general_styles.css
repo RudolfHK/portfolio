@@ -283,7 +283,8 @@ input[type='checkbox'] {
 /*4 Work*/
 .Work{
     padding: 0;
-    padding-bottom: 40vh;
+    padding-top: 5vh;
+    padding-bottom: 25vh;
 }
 
 .work_design {
@@ -294,6 +295,9 @@ input[type='checkbox'] {
     padding-inline-start: 0;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    font-size: 1.5em;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
 }
 
 .work_left{
