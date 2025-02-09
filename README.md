@@ -1,2 +1,2 @@
 # portfolio
-This is a portfolio about my person
+This is a portfolio about me
