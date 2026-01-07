@@ -53,8 +53,8 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    background: linear-gradient(180deg, rgba(147, 201, 155, 0.7) 0%, rgba(147, 201, 155, 0.4) 100%);
-    backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, rgba(147, 201, 155, 0.3) 0%, rgba(147, 201, 155, 0.15) 100%);
+    backdrop-filter: blur(12px);
     transition: background-color 0.5s ease-in-out;
     overflow-x: hidden;
     z-index: 1000;
@@ -209,6 +209,123 @@ article img {
     padding: 5vh 2em;
     margin: 0 auto;
     max-width: 1200px;
+    position: relative;
+}
+
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.85;
+    filter: blur(25px);
+}
+
+.shape1 {
+    width: 400px;
+    height: 400px;
+    top: -10%;
+    left: -5%;
+    animation: float1 35s ease-in-out infinite;
+}
+
+.shape2 {
+    width: 350px;
+    height: 350px;
+    top: 20%;
+    right: -8%;
+    animation: float2 40s ease-in-out infinite;
+}
+
+.shape3 {
+    width: 300px;
+    height: 300px;
+    bottom: -5%;
+    left: 10%;
+    animation: float3 38s ease-in-out infinite;
+}
+
+.shape4 {
+    width: 320px;
+    height: 320px;
+    bottom: 10%;
+    right: 5%;
+    animation: float4 45s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+        transform: translate(30px, -40px) rotate(120deg) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 30px) rotate(240deg) scale(0.95);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+        transform: translate(-40px, 35px) rotate(-90deg) scale(1.08);
+    }
+    66% {
+        transform: translate(25px, -30px) rotate(-180deg) scale(1.05);
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+        transform: translate(35px, 25px) rotate(100deg) scale(0.92);
+    }
+    66% {
+        transform: translate(-30px, -20px) rotate(200deg) scale(1.12);
+    }
+}
+
+@keyframes float4 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+        transform: translate(-25px, -35px) rotate(-110deg) scale(1.06);
+    }
+    66% {
+        transform: translate(40px, 20px) rotate(-220deg) scale(0.98);
+    }
+}
+
+.Rudolf_Hoffmann h2,
+.Rudolf_Hoffmann p {
+    position: relative;
+    z-index: 1;
 }
 
 .Rudolf_Hoffmann h2 {
@@ -232,22 +349,121 @@ article img {
 
 /*2 Short Bio*/
 .Short_Bio {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-bottom: 20vh;
 }
-.Short_Bio img {
-    width: 50%;
-    height: auto;
-    border-radius: 50%;
+
+.bio-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 900px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.bio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.Short_Bio img {
+    width: 250px;
+    height: 250px;
+    min-width: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.Short_Bio img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(147, 201, 155, 0.8), 0 0 50px rgba(147, 201, 155, 0.5);
+    filter: brightness(1.1);
+}
+
+.bio-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
 .Short_Bio ul {
     padding-inline-start: 0;
-    font-size: calc(1em + 1vw);
+    font-size: calc(0.9em + 0.5vw);
     list-style-type: none;
-    text-align: center;
+    text-align: left;
+    margin: 0;
+}
+
+.Short_Bio ul li {
+    margin-bottom: 0.8em;
+    display: flex;
+    align-items: center;
+}
+
+.Short_Bio ul li .icon {
+    margin-right: 0.5em;
+    font-size: 1.3em;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    margin-top: 0.5em;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, rgba(147, 201, 155, 0.6), rgba(97, 106, 112, 0.6));
+    color: #fff;
+    padding: 0.4em 0.9em;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+    .bio-card {
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 1.5em;
+    }
+    
+    .Short_Bio img {
+        width: 200px;
+        height: 200px;
+        min-width: 200px;
+    }
+    
+    .Short_Bio ul {
+        text-align: center;
+    }
+    
+    .Short_Bio ul li {
+        justify-content: center;
+    }
 }
 
 /*Collapsible from External Source*/
