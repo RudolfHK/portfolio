@@ -604,50 +604,282 @@ input[type='checkbox'] {
     font-size: calc(1em + 0.8vh);
 }
 /*4 Work*/
-.Work{
-    padding: 0;
-    padding-top: 5vh;
-    padding-bottom: 25vh;
+/*4 Work*/
+.Work {
+    padding: 5vh 2em 25vh;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.work_design {
-    display: grid;
-    list-style-type: none;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    font-size: 1.5em;
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+.Work h2 {
+    text-align: center;
+    margin-bottom: 2em;
 }
 
-.work_left{
-    grid-column: 1;
-    grid-row: 1;
-    padding: 1em;
-    margin: 1em;
-    align-items: center;
-    border: #000000 0.1em solid;
-    border-radius: 1em;
-    transition: transform 0.3s ease-in-out;
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2em 0;
 }
 
-.work_left:hover, .work_right:hover{
-    transform: scale(1.1);
+/* Center vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #000;
 }
 
-.work_right{
-    grid-column: 2;
-    grid-row: 1;
-    padding: 1em;
-    margin: 1em;
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 2em 3em;
+    margin-bottom: 3em;
+    opacity: 0;
+    animation: fadeInTimeline 0.6s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInTimeline {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item.left {
+    left: 0;
     text-align: right;
-    border: #000000 0.1em solid;
-    align-items: center;
-    border-radius: 1em;
-    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 1.8em;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: block;
+}
+
+.work-toggle {
+    display: none;
+}
+
+.expand-indicator {
+    margin-top: 1em;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.timeline-content:hover .expand-indicator {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.work-toggle:checked ~ .timeline-details {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.details-content {
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    margin-top: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.details-content h4 {
+    margin: 0 0 1em 0;
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+}
+
+.details-content ul {
+    margin: 0;
+    padding-left: 1.5em;
+    list-style-type: disc;
+}
+
+.details-content li {
+    margin-bottom: 0.8em;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.95em;
+}
+
+.details-content li:last-child {
+    margin-bottom: 0;
+}
+
+/* Connector line from card to timeline */
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 2.5em;
+    height: 2px;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-item.left .timeline-content::after {
+    right: 0;
+    left: auto;
+    width: 3em;
+    transform: translateX(100%);
+}
+
+.timeline-item.right .timeline-content::after {
+    left: 0;
+    right: auto;
+    width: 3em;
+    transform: translateX(-100%);
+}
+
+.timeline-content:hover::after {
+    opacity: 1;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-date {
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.timeline-content h3 {
+    font-size: 1.4em;
+    margin: 0.3em 0;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.timeline-content h3 a {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.timeline-content h3 a:hover {
+    color: #616a70;
+}
+
+.timeline-role {
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.timeline-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 1em 0;
+}
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1em;
+    justify-content: inherit;
+}
+
+.timeline-item.left .timeline-tags {
+    justify-content: flex-end;
+}
+
+.timeline-item.right .timeline-tags {
+    justify-content: flex-start;
+}
+
+.tech-tag {
+    background: linear-gradient(135deg, rgba(147, 201, 155, 0.5), rgba(97, 106, 112, 0.5));
+    color: rgba(0, 0, 0, 0.85);
+    padding: 0.4em 0.8em;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding: 1em 1em 1em 4em;
+        left: 0 !important;
+        text-align: left !important;
+    }
+    
+    .timeline-item.left .timeline-content::after,
+    .timeline-item.right .timeline-content::after {
+        left: 0;
+        right: auto;
+        width: 4em;
+        transform: translateX(-100%);
+    }
+    
+    .timeline-tags,
+    .timeline-item.left .timeline-tags {
+        justify-content: flex-start;
+    }
 }
 /*FOOTER Styles*/
 footer {
