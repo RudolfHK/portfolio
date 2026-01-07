@@ -499,14 +499,51 @@ input[type='checkbox'] {
 .collapsible-content {
     max-height: 0px;
     overflow: hidden;
-    transition: max-height .25s ease-in-out;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
 }
 .toggle:checked+.lbl-toggle+.collapsible-content {
-    max-height: 350px;
+    max-height: 1000px;
+    opacity: 1;
 }
 .collapsible-content .content-inner {
-    background: rgba(107, 136, 177, 0.2);
-    padding: .5rem 1rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    padding: 1.5em;
+    border-radius: 15px;
+    margin-top: 1em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.info-section h3 {
+    font-size: 1.2em;
+    margin: 0 0 0.8em 0;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.info-section p {
+    margin: 0;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1em;
+    text-align: left;
 }
 
 /*3 Projects*/
@@ -712,6 +749,19 @@ footer img{
     
     nav li a:hover {
         scale: 1.1;
+    }
+    
+    .info-sections {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+    
+    .info-column {
+        gap: 1em;
+    }
+    
+    .collapsible-content .content-inner {
+        padding: 1em;
     }
 }
 

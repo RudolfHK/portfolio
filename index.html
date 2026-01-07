@@ -76,12 +76,28 @@
                 class="lbl-toggle">More Info</label>
             <div class="collapsible-content">
                 <div class="content-inner">
-                    <p> Hey, I am Rudolf and currently i am in my 1st year master student at HTW Berlin. I graduated with a bachelor's degree
-                        in Computational Science and Engineering from the HTW Berlin in 2025.
-                        I am interested in Software Development, Data Science and Machine
-                        Learning and I have experience with various programming languages and tools including Python, C#, JavaScript and more.
-                        During my studies, I have worked on several projects, both individually and in teams, which have helped me to develop my skills in problem-solving, teamwork, and communication.
-                        I look forward to work on interesting projects and to meet new people.</p>
+                    <div class="info-sections">
+                        <div class="info-column">
+                            <div class="info-section">
+                                <h3>📚 About Me</h3>
+                                <p>Hey, I'm Rudolf! I'm currently in my first year of my Master's program in Computer Science in Engineering at HTW Berlin. I graduated with a Bachelor's degree in Computational Science and Engineering from HTW Berlin in 2025.</p>
+                            </div>
+                            <div class="info-section">
+                                <h3>🎯 Interests & Expertise</h3>
+                                <p>I'm passionate about Software Development, Data Science, and Machine Learning. I have experience with various programming languages and tools including Python, C#, JavaScript, and more. I enjoy tackling complex problems and building practical solutions.</p>
+                            </div>
+                        </div>
+                        <div class="info-column">
+                            <div class="info-section">
+                                <h3>🚀 Career Goals</h3>
+                                <p>During my studies, I've worked on several projects in university, work and hobby contexts, both individually and in teams which have helped me develop my skills in problem solving, teamwork, and communication. I'm eager to apply these skills in real world scenarios.</p>
+                            </div>
+                            <div class="info-section">
+                                <h3>🤝 What I'm Looking For</h3>
+                                <p>I'm looking forward to working on interesting and challenging projects, collaborating with talented teams, and meeting new people in the tech community. Let's build something great together!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -177,6 +193,29 @@
             } else {
                 const opacity = 1 - ((scrollPosition - fadeStart) / (fadeEnd - fadeStart));
                 backgroundShapes.style.opacity = opacity.toString();
+            }
+        });
+
+        // Scroll to show full collapsible content when opened
+        const collapsibleToggle = document.getElementById('collapsible');
+        const collapsibleContent = document.querySelector('.collapsible-content');
+        
+        collapsibleToggle.addEventListener('change', () => {
+            if (collapsibleToggle.checked) {
+                // Wait for the content to expand
+                setTimeout(() => {
+                    const contentRect = collapsibleContent.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    // If content extends below viewport, scroll to show it with extra padding
+                    if (contentRect.bottom > windowHeight) {
+                        const scrollOffset = contentRect.bottom - windowHeight + 100; // Add 100px extra scroll
+                        window.scrollBy({ 
+                            top: scrollOffset,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 400); // Match the CSS transition time
             }
         });
     </script>
