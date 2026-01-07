@@ -67,8 +67,8 @@ body {
 nav {
     justify-items: center;
     background-color: transparent;
-    padding-top: 1.5em;
-    padding-bottom: 3em;
+    padding-top: 0.75em;
+    padding-bottom: 1.5em;
     margin: 0;
     padding-left: 0;
     padding-right: 0;
@@ -123,7 +123,8 @@ nav li:first-child {
     cursor: pointer;
     padding: 1em;
     position: absolute;
-    top: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1em;
     z-index: 1001;
 }
@@ -447,13 +448,18 @@ footer img{
         padding-top: 12vh;
     }
     
+    .menu_links {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    
     .hamburger {
         display: flex;
     }
     
     nav {
-        padding-top: 3.5em;
-        padding-bottom: 0.5em;
+        padding-top: 1em;
+        padding-bottom: 1em;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
