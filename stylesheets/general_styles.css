@@ -6,6 +6,7 @@ html {
     min-height: 50em;
     scroll-behavior: smooth;
     transition: opacity 0.3s ease-in-out, display 0.3s ease-in-out;
+    overflow-x: hidden;
 }
 * {
     box-sizing: inherit;
@@ -52,9 +53,11 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: #51515163;
-    background-color: transparent;
+    background: linear-gradient(180deg, rgba(147, 201, 155, 0.7) 0%, rgba(147, 201, 155, 0.4) 100%);
+    backdrop-filter: blur(8px);
     transition: background-color 0.5s ease-in-out;
+    overflow-x: hidden;
+    z-index: 1000;
 }
 .menu_links a {
     color: rgb(0, 0, 0);
@@ -69,6 +72,8 @@ nav {
     margin: 0;
     padding-left: 0;
     padding-right: 0;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 nav ul {
@@ -105,6 +110,43 @@ nav li a:hover {
 
 nav li:first-child {
     border-left: none
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 1em;
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 3px 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
 }
 
 /*ARTICLE Styles*/
@@ -158,6 +200,33 @@ article img {
 /*1 Rudolf Hoffmann*/
 .Rudolf_Hoffmann {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    padding: 5vh 2em;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.Rudolf_Hoffmann h2 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    margin: 0 0 1.5em 0;
+    padding: 0;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.Rudolf_Hoffmann p {
+    font-size: clamp(1.1rem, 2vw + 0.5rem, 1.8rem);
+    margin: 0.8em auto;
+    padding: 1em 2em;
+    max-width: 800px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 /*2 Short Bio*/
@@ -366,4 +435,95 @@ footer img{
     color: rgb(0, 0, 0);
     text-decoration: none;
     display: inline-block;
+}
+
+/*RESPONSIVE STYLES - Mobile and Tablet*/
+@media screen and (max-width: 768px) {
+    article {
+        padding-top: 8vh;
+    }
+    
+    .Rudolf_Hoffmann {
+        padding-top: 12vh;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    nav {
+        padding-top: 3.5em;
+        padding-bottom: 0.5em;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    
+    .menu-toggle:checked ~ nav {
+        max-height: 500px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+    
+    nav li {
+        padding: 0.5em 1em;
+        border-left: none;
+        border-bottom: 0.1em solid black;
+        min-width: 100%;
+    }
+    
+    nav li:last-child {
+        border-bottom: none;
+    }
+    
+    nav li:hover {
+        padding: 0.5em 1em;
+    }
+    
+    nav li a {
+        font-size: 1.1em;
+    }
+    
+    nav li a:hover {
+        scale: 1.1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    article {
+        padding-top: 8vh;
+    }
+    
+    .Rudolf_Hoffmann {
+        padding-top: 12vh;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+    
+    nav li {
+        padding: 0.5em 1em;
+        border-left: none;
+        border-bottom: 0.1em solid black;
+        min-width: 100%;
+    }
+    
+    nav li:last-child {
+        border-bottom: none;
+    }
+    
+    nav li:hover {
+        padding: 0.5em 1em;
+    }
+    
+    nav li a {
+        font-size: 1.1em;
+    }
 }
