@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <title>Portfolio - Rudolf Hoffmann</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/general_styles.css">
+    
+    <!-- Modular Stylesheets -->
+    <link rel="stylesheet" href="stylesheets/base.css">
+    <link rel="stylesheet" href="stylesheets/navigation.css">
+    <link rel="stylesheet" href="stylesheets/hero.css">
+    <link rel="stylesheet" href="stylesheets/profile.css">
+    <link rel="stylesheet" href="stylesheets/projects.css">
+    <link rel="stylesheet" href="stylesheets/timeline.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
+    <link rel="stylesheet" href="stylesheets/responsive.css">
 </head>
 
 <body>
@@ -28,20 +37,6 @@
         </div>
     </header>
     <article class="Rudolf_Hoffmann" id="me">
-        <div class="background-shapes">
-            <svg class="shape shape1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M45.5,-58.5C58.1,-49.3,67.3,-34.9,71.8,-18.8C76.3,-2.7,76.1,15.1,69.5,29.7C62.9,44.3,49.9,55.7,35.3,62.8C20.7,69.9,4.5,72.7,-11.9,71.1C-28.3,69.5,-45,63.5,-57.8,52.3C-70.6,41.1,-79.5,24.7,-81.3,7.5C-83.1,-9.7,-77.8,-27.7,-67.8,-42.1C-57.8,-56.5,-43.1,-67.3,-27.5,-75.2C-11.9,-83.1,4.6,-88.1,20.3,-85.5C36,-82.9,32.9,-67.7,45.5,-58.5Z" fill="rgba(147, 201, 155, 0.4)"/>
-            </svg>
-            <svg class="shape shape2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M39.5,-65.4C51.4,-56.6,61.3,-44.5,68.5,-30.8C75.7,-17.1,80.2,-1.8,78.4,12.7C76.6,27.2,68.5,41,57.8,52.3C47.1,63.6,33.8,72.4,18.9,76.8C4,81.2,-12.5,81.2,-28.2,76.5C-43.9,71.8,-58.8,62.4,-69.1,49.3C-79.4,36.2,-85.1,19.4,-84.5,3C-83.9,-13.4,-77,-29.4,-66.5,-42.1C-56,-54.8,-41.9,-64.2,-27.1,-72.1C-12.3,-80,-0.8,-86.4,11.5,-83.9C23.8,-81.4,27.6,-74.2,39.5,-65.4Z" fill="rgba(147, 201, 155, 0.45)"/>
-            </svg>
-            <svg class="shape shape3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M51.2,-70.3C64.5,-61.2,72.5,-44.3,76.8,-27.1C81.1,-9.9,81.7,7.6,76.4,23.3C71.1,39,59.9,53,45.8,62.5C31.7,72,14.8,77,-2.7,80.8C-20.2,84.6,-38.4,87.2,-53.8,79.4C-69.2,71.6,-81.8,53.4,-86.5,33.9C-91.2,14.4,-88,-6.4,-80.3,-24.1C-72.6,-41.8,-60.4,-56.4,-45.5,-64.9C-30.6,-73.4,-13.9,-75.8,2.5,-79.1C18.9,-82.4,37.9,-79.4,51.2,-70.3Z" fill="rgba(147, 201, 155, 0.45)"/>
-            </svg>
-            <svg class="shape shape4" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M42.7,-61.8C54.9,-52.4,64.3,-39.8,70.1,-25.3C75.9,-10.8,78.1,5.6,74.2,20.5C70.3,35.4,60.3,48.8,47.5,58.7C34.7,68.6,19.1,75,2.3,71.8C-14.5,68.6,-32.2,56,-46.8,42.3C-61.4,28.6,-73,13.8,-76.8,-3.1C-80.6,-20,-76.6,-39,-66.5,-53.9C-56.4,-68.8,-40.2,-79.6,-24.5,-87.3C-8.8,-95,-0.4,-99.6,11.3,-96.8C23,-94,34.5,-71.2,42.7,-61.8Z" fill="rgba(147, 201, 155, 0.45)"/>
-            </svg>
-        </div>
         <h2>Rudolf Hoffmann</h2>
         <p>Master Student at HTW Berlin, Germany</p>
         <p>Informatik im Ingenieurswesen / Computer Science in Engineering</p>
@@ -50,7 +45,7 @@
     <article class="Short_Bio" id="bio">
         <h2>Profile</h2>
         <div class="bio-card">
-            <img src="images/profile_pic.png" alt="Profile Image" class="profile-image">
+            <img src="images/profile_pic.png" alt="Profile Image" class="profile-image" loading="lazy">
             <div class="bio-info">
                 <ul>
                     <li><span class="icon">🎂</span> Age: 25</li>
@@ -108,7 +103,7 @@
             <h2>Projects</h2>
             <div class="gallery">
                 <ul>
-                    <li id="II"><img src="images/projects_pp_addon.png" alt="PowerPoint Add-on" title="Programming Project at HTW Berlin
+                    <li id="II"><img src="images/projects_pp_addon.png" alt="PowerPoint Add-on" loading="lazy" title="Programming Project at HTW Berlin
                         students work together in groups and have to deliver a finished project at the end of the semester.
                         Our task was to build a power point add-on that enables the user to use a image generation service
                         inside of power point. The add-on allows for specifying generation parameters, sending them to the
@@ -116,21 +111,21 @@
                         for the user.">
                         <div class="collapsed"><p>2022/23<br>Powerpoint Add-On Featuring Image Generation<br> C#, REST</p></div>
                     </li>
-                    <li id="III"><img src="images/projects_app_dev.png" alt="webdev" title="Softwaredevelopement project at HTW Berlin
+                    <li id="III"><img src="images/projects_app_dev.png" alt="webdev" loading="lazy" title="Softwaredevelopement project at HTW Berlin
                         students work together in groups and in cooperation with a company to deliver a finished project or
                         part at the end of the semester. We had to handle communication with the company and negotiating
                         features. We worked on different features for an already existing calender app in Back- and Frontend.">
                         <div class="collapsed"><p>2023<br>App Developement<br>Flutter(Dart), JavaScript, Arango DB,
                             Postman</p></div>
                     </li>
-                    <li id="IV"><img src="images/projects_ad_synth.png" alt="A/D Synth" title="Interdisciplinary project at HTW Berlin
+                    <li id="IV"><img src="images/projects_ad_synth.png" alt="A/D Synth" loading="lazy" title="Interdisciplinary project at HTW Berlin
                         students work together in groups to deliver a finished project consisting of hardware and software
                         components at the end of the semester. Our choosen topic was the design and build of a 
                         analogue/digital synthesizer. We set out to build a synthesizer which produces and modulates sound
                         analogue. The output could also be used and changed via a desktop app.">
                         <div class="collapsed"><p>2024 <br>Analogue/Digital Synthesizer<br>C++, C, Hardware</p></div>
                     </li>
-                    <li id="V"><img src="images/projects_fs_team.jpg" alt="Formulat student team greenBEAR" title="Formula Student Team greenBEAR
+                    <li id="V"><img src="images/projects_fs_team.jpg" alt="Formulat student team greenBEAR" loading="lazy" title="Formula Student Team greenBEAR
                         Initially started in 2006, the project has seen many members over the course of time who have produced a total 
                         of 13 race cars. After a brief pause of two years (2020 - 2022), however the team has now been newly founded.
                         With new members and a new approach, we are building on previous achievements. Therefore, we are constructing
@@ -247,24 +242,6 @@
             link.addEventListener('click', () => {
                 document.getElementById('menu-toggle').checked = false;
             });
-        });
-
-        // Fade out background shapes on scroll
-        const backgroundShapes = document.querySelector('.background-shapes');
-        
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            const fadeStart = 100; // Start fading after scrolling 100px
-            const fadeEnd = 500; // Fully faded at 500px
-            
-            if (scrollPosition <= fadeStart) {
-                backgroundShapes.style.opacity = '1';
-            } else if (scrollPosition >= fadeEnd) {
-                backgroundShapes.style.opacity = '0';
-            } else {
-                const opacity = 1 - ((scrollPosition - fadeStart) / (fadeEnd - fadeStart));
-                backgroundShapes.style.opacity = opacity.toString();
-            }
         });
 
         // Scroll to show full collapsible content when opened

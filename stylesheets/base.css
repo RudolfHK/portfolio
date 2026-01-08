@@ -1,0 +1,117 @@
+/* ====================================
+   BASE STYLES
+   Global resets, typography, and layout
+   ==================================== */
+
+@charset "UTF-8";
+
+/* Box Model & Scrolling */
+html {
+    box-sizing: border-box;
+    min-width: 20em;
+    min-height: 50em;
+    scroll-behavior: smooth;
+    transition: opacity 0.3s ease-in-out, display 0.3s ease-in-out;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+/* Horizontal Rules */
+hr {
+    background-color: rgb(50, 50, 50);
+    border-color: rgb(50, 50, 50);
+    margin-right: 5em;
+    margin-left: 5em;
+}
+
+/* Animated Background */
+body {
+    background: linear-gradient(45deg, #93c99b, #616a70);
+    background-size: 200%;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    margin: 0;
+    animation: gradientAnimation 6s infinite linear;
+    position: relative;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 100%;
+    }
+    25% {
+        background-position: 100% 100%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    75% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* Article Containers */
+article {
+    padding: calc(1vw + 1vh);
+    text-align: center;
+    margin: calc(5vw);
+    border-radius: 1.5em;
+    padding-top: 10vh;
+}
+
+.Rudolf_Hoffmann {
+    padding-bottom: 50vh;
+}
+
+article header {
+    text-align: center;
+}
+
+article h2 {
+    font-size: calc(2em + 2vw);
+    font-weight: 1000;
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    margin: 0;
+    padding: calc(1em + 2vw);
+}
+
+article h3 {
+    font-size: calc(1.5em + 1vw);
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+article ul {
+    font-size: calc(1em + 1vw);
+    justify-self: center;
+    align-self: center;
+    text-align: left;
+}
+
+article p {
+    font-size: calc(1em + 1vw);
+    text-align: center;
+    justify-self: center;
+}
+
+article p a {
+    color: black;
+    text-decoration: none;
+    font-size: calc(1em + 1vw);
+}
+
+article img {
+    width: 100%;
+    height: auto;
+    border-radius: 1em;
+    justify-self: center;
+    align-self: center;
+}

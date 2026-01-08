@@ -1,0 +1,105 @@
+/* ====================================
+   NAVIGATION STYLES
+   Menu, burger icon, and navigation links
+   ==================================== */
+
+/* Fixed Menu Bar */
+.menu_links {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(180deg, rgba(147, 201, 155, 0.3) 0%, rgba(147, 201, 155, 0.15) 100%);
+    backdrop-filter: blur(12px);
+    transition: background-color 0.5s ease-in-out;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.menu_links a {
+    color: rgb(0, 0, 0);
+}
+
+/* Navigation Menu */
+nav {
+    justify-items: center;
+    background-color: transparent;
+    padding-top: 0.75em;
+    padding-bottom: 1.5em;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding-inline-start: 0;
+}
+
+nav li {
+    padding: 0.2em 1em;
+    border-left: 0.2em solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: padding 0.6s ease-in-out;
+}
+
+nav li:hover {
+    padding: 0.2em 3em;
+}
+
+nav li a {
+    font-weight: bold;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: calc(1em + 1vw);
+    display: inline-block;
+    transition: color 0.6s ease-in-out, scale 0.6s ease-in-out;
+}
+
+nav li a:hover {
+    color: rgb(51, 37, 84);
+    scale: 1.3;
+}
+
+nav li:first-child {
+    border: none;
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Hamburger Icon Styles */
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger animation when checked */
+.menu-toggle:checked ~ nav .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle:checked ~ nav .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ nav .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}

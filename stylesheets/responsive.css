@@ -1,0 +1,189 @@
+/* ====================================
+   RESPONSIVE STYLES
+   Mobile and tablet adaptations
+   ==================================== */
+
+/* Tablet & Mobile (768px and below) */
+@media screen and (max-width: 768px) {
+    article {
+        padding-top: 8vh;
+    }
+    
+    .Rudolf_Hoffmann {
+        padding-top: 12vh;
+    }
+    
+    .menu_links {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    
+    /* Show hamburger menu */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1em;
+        z-index: 1001;
+    }
+
+    /* Hide navigation by default */
+    nav {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Show navigation when checked */
+    .menu-toggle:checked ~ nav {
+        max-height: 500px;
+    }
+
+    /* Stack navigation vertically */
+    nav ul {
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    nav li {
+        border-left: none;
+        border-bottom: 0.2em solid black;
+        padding: 0.5em 1em;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    nav li:last-child {
+        border-bottom: none;
+    }
+
+    nav li:hover {
+        padding: 0.5em 1em;
+    }
+
+    nav li a {
+        font-size: 1.1em;
+    }
+    
+    nav li a:hover {
+        scale: 1.1;
+    }
+
+    /* Bio Card - Stack vertically */
+    .bio-card {
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 1.5em;
+    }
+
+    .Short_Bio img {
+        width: 200px;
+        height: 200px;
+        min-width: 200px;
+    }
+    
+    .Short_Bio ul {
+        text-align: center;
+    }
+    
+    .Short_Bio ul li {
+        justify-content: center;
+    }
+
+    /* Info Sections - Single column */
+    .info-sections {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+    
+    .info-column {
+        gap: 1em;
+    }
+
+    /* Collapsible Content */
+    .collapsible-content .content-inner {
+        padding: 1em;
+    }
+
+    /* Timeline - Left-aligned for mobile */
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left !important;
+        padding: 1em 1em 1em 4em;
+    }
+
+    .timeline-item.left .timeline-content::after,
+    .timeline-item.right .timeline-content::after {
+        left: 0;
+        right: auto;
+        width: 4em;
+        transform: translateX(-100%);
+    }
+
+    .timeline-tags,
+    .timeline-item.left .timeline-tags {
+        justify-content: flex-start !important;
+    }
+}
+
+/* Mobile (480px and below) */
+@media screen and (max-width: 480px) {
+    article {
+        padding-top: 8vh;
+    }
+    
+    .Rudolf_Hoffmann {
+        padding-top: 12vh;
+    }
+    
+    hr {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
+
+    article h2 {
+        font-size: calc(1.5em + 1.5vw);
+    }
+
+    .Rudolf_Hoffmann {
+        min-height: 70vh;
+        padding: 3vh 1em;
+    }
+
+    .Short_Bio img {
+        width: 150px;
+        height: 150px;
+        min-width: 150px;
+    }
+
+    .bio-card {
+        padding: 1em;
+    }
+
+    .Projects ul {
+        gap: 2em;
+    }
+
+    .Projects ul li {
+        max-width: 100%;
+    }
+
+    .timeline-item {
+        padding: 1em 0.5em 1em 3.5em;
+    }
+
+    .timeline::before {
+        left: 1.5em;
+    }
+}
