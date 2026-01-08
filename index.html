@@ -55,7 +55,7 @@
                     <li><span class="icon">💬</span> Languages: German, English</li>
                     <li><span class="icon">📚</span> Currently: Master Student at HTW Berlin, Germany</li>
                 </ul>
-                <div class="skills">
+                <!-- <div class="skills">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">C#</span>
                     <span class="skill-tag">JavaScript</span>
@@ -64,7 +64,7 @@
                     <span class="skill-tag">Machine Learning</span>
                     <span class="skill-tag">Flutter</span>
                     <span class="skill-tag">REST APIs</span>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="wrap-collabsible"> <input id="collapsible" class="toggle" type="checkbox"><label for="collapsible"
@@ -99,41 +99,222 @@
     </article>
     <hr>
     <article class="Projects" id="projects">
-        <div class="section">
-            <h2>Projects</h2>
-            <div class="gallery">
-                <ul>
-                    <li id="II"><img src="images/projects_pp_addon.png" alt="PowerPoint Add-on" loading="lazy" title="Programming Project at HTW Berlin
-                        students work together in groups and have to deliver a finished project at the end of the semester.
-                        Our task was to build a power point add-on that enables the user to use a image generation service
-                        inside of power point. The add-on allows for specifying generation parameters, sending them to the
-                        rest service, getting updates on the status, receiving the results and saving the results temporarily
-                        for the user.">
-                        <div class="collapsed"><p>2022/23<br>Powerpoint Add-On Featuring Image Generation<br> C#, REST</p></div>
-                    </li>
-                    <li id="III"><img src="images/projects_app_dev.png" alt="webdev" loading="lazy" title="Softwaredevelopement project at HTW Berlin
-                        students work together in groups and in cooperation with a company to deliver a finished project or
-                        part at the end of the semester. We had to handle communication with the company and negotiating
-                        features. We worked on different features for an already existing calender app in Back- and Frontend.">
-                        <div class="collapsed"><p>2023<br>App Developement<br>Flutter(Dart), JavaScript, Arango DB,
-                            Postman</p></div>
-                    </li>
-                    <li id="IV"><img src="images/projects_ad_synth.png" alt="A/D Synth" loading="lazy" title="Interdisciplinary project at HTW Berlin
-                        students work together in groups to deliver a finished project consisting of hardware and software
-                        components at the end of the semester. Our choosen topic was the design and build of a 
-                        analogue/digital synthesizer. We set out to build a synthesizer which produces and modulates sound
-                        analogue. The output could also be used and changed via a desktop app.">
-                        <div class="collapsed"><p>2024 <br>Analogue/Digital Synthesizer<br>C++, C, Hardware</p></div>
-                    </li>
-                    <li id="V"><img src="images/projects_fs_team.jpg" alt="Formulat student team greenBEAR" loading="lazy" title="Formula Student Team greenBEAR
-                        Initially started in 2006, the project has seen many members over the course of time who have produced a total 
-                        of 13 race cars. After a brief pause of two years (2020 - 2022), however the team has now been newly founded.
-                        With new members and a new approach, we are building on previous achievements. Therefore, we are constructing
-                        the first fully electric Formula Student cars in the history of our university. With that, our goal is no less
-                        than to stir up the Formula Student events across Europe and beyond!">
-                        <div class="collapsed"><p>2022 - today <br>Formula Student Team greenBEAR</p></div>
-                    </li>
-                </ul>
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1: PowerPoint Add-on -->
+            <div class="project-card" data-modal="modal-1">
+                <div class="project-content">
+                    <img src="images/projects_pp_addon.png" alt="PowerPoint Add-on" class="project-image" loading="lazy">
+                    <div class="project-info">
+                        <div class="project-year">2022/23</div>
+                        <h3>PowerPoint Add-On Featuring Image Generation</h3>
+                        <p>Programming Project at HTW Berlin - Building a PowerPoint add-on with integrated image generation service</p>
+                        <div class="project-tags">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">REST</span>
+                            <span class="tech-tag">.NET</span>
+                        </div>
+                        <div class="expand-indicator">Click for details ▼</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: App Development -->
+            <div class="project-card" data-modal="modal-2">
+                <div class="project-content">
+                    <img src="images/projects_app_dev.png" alt="App Development" class="project-image" loading="lazy">
+                    <div class="project-info">
+                        <div class="project-year">2023</div>
+                        <h3>Calendar App Development</h3>
+                        <p>Software development project in cooperation with a company - Building features for a calendar application</p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">ArangoDB</span>
+                            <span class="tech-tag">Postman</span>
+                        </div>
+                        <div class="expand-indicator">Click for details ▼</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Analogue/Digital Synthesizer -->
+            <div class="project-card" data-modal="modal-3">
+                <div class="project-content">
+                    <img src="images/projects_ad_synth.png" alt="A/D Synthesizer" class="project-image" loading="lazy">
+                    <div class="project-info">
+                        <div class="project-year">2024</div>
+                        <h3>Analogue/Digital Synthesizer</h3>
+                        <p>Interdisciplinary project combining hardware and software to build a synthesizer from scratch</p>
+                        <div class="project-tags">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Hardware</span>
+                            <span class="tech-tag">Embedded Systems</span>
+                        </div>
+                        <div class="expand-indicator">Click for details ▼</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Formula Student Team -->
+            <div class="project-card" data-modal="modal-4">
+                <div class="project-content">
+                    <img src="images/projects_fs_team.jpg" alt="Formula Student Team greenBEAR" class="project-image" loading="lazy">
+                    <div class="project-info">
+                        <div class="project-year">2022 - Today</div>
+                        <h3>Formula Student Team greenBEAR</h3>
+                        <p>Member of university racing team building electric Formula Student cars</p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Teamwork</span>
+                            <span class="tech-tag">Engineering</span>
+                            <span class="tech-tag">Electric Vehicles</span>
+                        </div>
+                        <div class="expand-indicator">Click for details ▼</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 1: PowerPoint Add-on -->
+        <div id="modal-1" class="project-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <button class="modal-close">&times;</button>
+                <div class="modal-content">
+                    <div class="modal-image-section">
+                        <img src="images/projects_pp_addon.png" alt="PowerPoint Add-on">
+                    </div>
+                    <div class="modal-details-section">
+                        <div class="modal-header">
+                            <div class="project-year">2022/23</div>
+                            <h2>PowerPoint Add-On Featuring Image Generation</h2>
+                            <div class="project-tags">
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">REST</span>
+                                <span class="tech-tag">.NET</span>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Project Description</h3>
+                            <p>Students worked together in groups to deliver a finished project at the end of the semester. Our task was to build a PowerPoint add-on that enables users to use an image generation service inside PowerPoint.</p>
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>Specify image generation parameters directly within PowerPoint</li>
+                                <li>Send requests to REST service and receive status updates</li>
+                                <li>Retrieve and display generated images</li>
+                                <li>Temporarily save results for user convenience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 2: App Development -->
+        <div id="modal-2" class="project-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <button class="modal-close">&times;</button>
+                <div class="modal-content">
+                    <div class="modal-image-section">
+                        <img src="images/projects_app_dev.png" alt="App Development">
+                    </div>
+                    <div class="modal-details-section">
+                        <div class="modal-header">
+                            <div class="project-year">2023</div>
+                            <h2>Calendar App Development</h2>
+                            <div class="project-tags">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">ArangoDB</span>
+                                <span class="tech-tag">Postman</span>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Project Description</h3>
+                            <p>Software development project at HTW Berlin where students work together in groups in cooperation with a company to deliver a finished project at the end of the semester.</p>
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Handled communication with the company and negotiated features</li>
+                                <li>Worked on different features for an existing calendar app</li>
+                                <li>Developed both backend and frontend components</li>
+                                <li>Integrated database solutions using ArangoDB</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 3: Synthesizer -->
+        <div id="modal-3" class="project-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <button class="modal-close">&times;</button>
+                <div class="modal-content">
+                    <div class="modal-image-section">
+                        <img src="images/projects_ad_synth.png" alt="A/D Synthesizer">
+                    </div>
+                    <div class="modal-details-section">
+                        <div class="modal-header">
+                            <div class="project-year">2024</div>
+                            <h2>Analogue/Digital Synthesizer</h2>
+                            <div class="project-tags">
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">C</span>
+                                <span class="tech-tag">Hardware</span>
+                                <span class="tech-tag">Embedded Systems</span>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Project Description</h3>
+                            <p>Interdisciplinary project at HTW Berlin where students work together to deliver a finished project consisting of hardware and software components. Our chosen topic was the design and build of an analogue/digital synthesizer.</p>
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>Built synthesizer that produces and modulates sound analogously</li>
+                                <li>Developed desktop application for additional control</li>
+                                <li>Integrated hardware and software components</li>
+                                <li>Implemented real-time audio processing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 4: Formula Student -->
+        <div id="modal-4" class="project-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <button class="modal-close">&times;</button>
+                <div class="modal-content">
+                    <div class="modal-image-section">
+                        <img src="images/projects_fs_team.jpg" alt="Formula Student Team greenBEAR">
+                    </div>
+                    <div class="modal-details-section">
+                        <div class="modal-header">
+                            <div class="project-year">2022 - Today</div>
+                            <h2>Formula Student Team greenBEAR</h2>
+                            <div class="project-tags">
+                                <span class="tech-tag">Teamwork</span>
+                                <span class="tech-tag">Engineering</span>
+                                <span class="tech-tag">Electric Vehicles</span>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h3>About the Team</h3>
+                            <p>Initially started in 2006, the project has seen many members over the course of time who have produced a total of 13 race cars. After a brief pause (2020-2022), the team has been newly founded.</p>
+                            <h3>Current Goals</h3>
+                            <ul>
+                                <li>Building on previous achievements with new members and approach</li>
+                                <li>Constructing the first fully electric Formula Student cars in university history</li>
+                                <li>Competing in Formula Student events across Europe and beyond</li>
+                                <li>Developing innovative solutions for electric vehicle engineering</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </article>
@@ -264,6 +445,52 @@
                         });
                     }
                 }, 400); // Match the CSS transition time
+            }
+        });
+
+        // Project Modal Functionality
+        const projectCards = document.querySelectorAll('.project-card');
+        const modals = document.querySelectorAll('.project-modal');
+        
+        // Open modal when clicking project card
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            });
+        });
+
+        // Close modal functionality
+        modals.forEach(modal => {
+            const closeBtn = modal.querySelector('.modal-close');
+            const overlay = modal.querySelector('.modal-overlay');
+            
+            // Close on button click
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+            
+            // Close on overlay click
+            overlay.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modals.forEach(modal => {
+                    if (modal.classList.contains('active')) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
             }
         });
     </script>

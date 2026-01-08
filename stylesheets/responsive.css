@@ -111,6 +111,29 @@
         padding: 1em;
     }
 
+    /* Projects Grid - Single column on tablet */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+
+    /* Modal - Stack layout on tablet */
+    .modal-content {
+        flex-direction: column;
+        height: auto;
+        max-height: 90vh;
+    }
+
+    .modal-image-section {
+        width: 100%;
+        height: 250px;
+    }
+
+    .modal-details-section {
+        width: 100%;
+        padding: 2em;
+    }
+
     /* Timeline - Left-aligned for mobile */
     .timeline::before {
         left: 30px;
@@ -166,12 +189,44 @@
         padding: 1em;
     }
 
-    .Projects ul {
-        gap: 2em;
+    /* Projects - Adjust spacing on mobile */
+    .projects-grid {
+        gap: 1em;
+        padding: 0.5em 0;
     }
 
-    .Projects ul li {
-        max-width: 100%;
+    .project-image {
+        height: 200px;
+    }
+
+    .project-info {
+        padding: 1em;
+    }
+
+    /* Modal - Smaller padding on mobile */
+    .modal-container {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .modal-image-section {
+        height: 200px;
+    }
+
+    .modal-details-section {
+        padding: 1.5em;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-close {
+        top: 1rem;
+        right: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1.5em;
     }
 
     .timeline-item {
