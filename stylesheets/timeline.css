@@ -155,7 +155,7 @@
 .timeline-role {
     font-size: 1.1em;
     font-weight: 600;
-    color: #93c99b;
+    color: #000000;
     margin-bottom: 0.8em;
 }
 
@@ -225,7 +225,7 @@
 }
 
 .work-toggle:checked ~ .timeline-details {
-    max-height: 600px;
+    max-height: 800px;
     opacity: 1;
 }
 
@@ -239,6 +239,7 @@
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.5s ease-in-out 0.2s, transform 0.5s ease-in-out 0.2s;
+    overflow: visible;
 }
 
 .work-toggle:checked ~ .timeline-details .details-content {
@@ -248,14 +249,14 @@
 
 .details-content h4 {
     margin: 0 0 1em 0;
-    font-size: 1.2em;
+    font-size: 0.95em;
     color: rgba(0, 0, 0, 0.9);
     font-weight: 600;
 }
 
 .details-content ul {
     margin: 0;
-    padding-left: 0.5em;
+    padding-left: 1.5em;
     list-style-type: disc;
 }
 
@@ -263,7 +264,7 @@
     margin-bottom: 0.8em;
     color: rgba(0, 0, 0, 0.8);
     line-height: 1.6;
-    font-size: 0.85em;
+    font-size: 0.8em;
 }
 
 .details-content li:last-child {

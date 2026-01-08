@@ -156,11 +156,6 @@
         font-size: calc(1.5em + 1.5vw);
     }
 
-    .Rudolf_Hoffmann {
-        min-height: 70vh;
-        padding: 3vh 1em;
-    }
-
     .Short_Bio img {
         width: 150px;
         height: 150px;
@@ -185,5 +180,21 @@
 
     .timeline::before {
         left: 1.5em;
+    }
+}
+
+/* Landscape devices (like Nest Hub) */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .Rudolf_Hoffmann {
+        min-height: 100vh;
+        padding: 2vh 2em;
+    }
+}
+
+/* iPhone SE and similar small devices */
+@media screen and (max-width: 375px) and (max-height: 667px) {
+    .Rudolf_Hoffmann {
+        min-height: 100vh;
+        padding: 5vh 1em;
     }
 }
