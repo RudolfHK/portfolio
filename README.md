@@ -40,4 +40,4 @@ A modern, responsive portfolio website showcasing my work experience, projects, 
 
 ## 📄 License
 
-© 2025 Rudolf Hoffmann. All rights reserved.
+© 2026 Rudolf Hoffmann. All rights reserved.
