@@ -29,7 +29,7 @@
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: #000;
+    background: var(--clr-text);
     top: 0;
 }
 
@@ -46,17 +46,6 @@
 .timeline-item:nth-child(1) { animation-delay: 0.2s; }
 .timeline-item:nth-child(2) { animation-delay: 0.4s; }
 .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-
-@keyframes fadeInTimeline {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* Left-aligned items */
 .timeline-item.left {
@@ -95,7 +84,7 @@
     position: absolute;
     top: 2.5em;
     height: 2px;
-    background: #000;
+    background: var(--clr-text);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -121,7 +110,7 @@
 /* Timeline Content Elements */
 .timeline-date {
     font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--clr-text-70);
     font-weight: 600;
     margin-bottom: 0.5em;
     text-transform: uppercase;
@@ -131,37 +120,40 @@
 .timeline-content h3 {
     font-size: 1.4em;
     margin: 0.3em 0;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
 }
 
 .timeline-content h3 a {
-    color: rgba(0, 0, 0, 0.9);
-    text-decoration: none;
+    color: var(--clr-slate);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
     font-weight: 700;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .timeline-content h3 a:hover {
-    color: #616a70;
+    color: var(--clr-slate);
+    opacity: 0.8;
 }
 
 .timeline-company {
     font-size: 1.4em;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
     margin-bottom: 0.3em;
 }
 
 .timeline-role {
     font-size: 1.1em;
     font-weight: 600;
-    color: #000000;
+    color: var(--clr-text);
     margin-bottom: 0.8em;
 }
 
 .timeline-content p {
     font-size: 1em;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--clr-text-80);
     margin: 1em 0;
     line-height: 1.6;
 }
@@ -185,7 +177,7 @@
 
 .tech-tag {
     background: linear-gradient(135deg, rgba(147, 201, 155, 0.5), rgba(97, 106, 112, 0.5));
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--clr-text-85);
     padding: 0.4em 0.8em;
     border-radius: 15px;
     font-size: 0.85em;
@@ -198,18 +190,9 @@
     transform: translateY(-2px);
 }
 
-/* Expand Indicator */
-.expand-indicator {
-    margin-top: 1em;
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 500;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
+/* Expand indicator hover (base style is in base.css) */
 .timeline-content:hover .expand-indicator {
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
 }
 
 /* Expandable Details */
@@ -250,7 +233,7 @@
 .details-content h4 {
     margin: 0 0 1em 0;
     font-size: 0.95em;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
     font-weight: 600;
 }
 
@@ -258,13 +241,14 @@
     margin: 0;
     padding-left: 1.5em;
     list-style-type: disc;
+    font-size: 1em;
 }
 
 .details-content li {
     margin-bottom: 0.8em;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--clr-text-80);
     line-height: 1.6;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .details-content li:last-child {

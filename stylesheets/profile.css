@@ -120,7 +120,7 @@ input[type='checkbox'] {
     font-size: calc(1em + 1.5vw);
     text-align: center;
     padding: 1em;
-    color: #000000;
+    color: var(--clr-text);
     background: none;
     cursor: pointer;
     border-radius: 7px;
@@ -198,7 +198,7 @@ input[type='checkbox'] {
 
 .info-section h3 {
     font-size: 1.2em;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
     margin: 0 0 0.8em 0;
     font-weight: 600;
     display: flex;
@@ -209,7 +209,7 @@ input[type='checkbox'] {
 .info-section p {
     font-size: 1em;
     line-height: 1.7;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--clr-text-80);
     margin: 0;
     text-align: left;
 }

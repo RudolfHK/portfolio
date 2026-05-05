@@ -67,7 +67,7 @@
 
 .project-year {
     font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--clr-text-70);
     font-weight: 600;
     margin-bottom: 0.5em;
     text-transform: uppercase;
@@ -77,13 +77,13 @@
 .project-info h3 {
     font-size: 1.3em;
     margin: 0.3em 0;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
     font-weight: 700;
 }
 
 .project-info p {
     font-size: 0.95em;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--clr-text-80);
     margin: 1em 0;
     line-height: 1.6;
 }
@@ -96,18 +96,8 @@
     margin-top: 1em;
 }
 
-/* Expand Indicator */
-.expand-indicator {
-    margin-top: 1em;
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 500;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
 .project-content:hover .expand-indicator {
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
 }
 
 /* ====================================
@@ -262,7 +252,7 @@
 
 .modal-header .project-year {
     font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--clr-text-60);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -271,7 +261,7 @@
 
 .modal-header h2 {
     font-size: 2em;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
     margin: 0.5em 0;
     line-height: 1.2;
 }
@@ -282,12 +272,12 @@
 
 /* Modal Body */
 .modal-body {
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--clr-text-80);
 }
 
 .modal-body h3 {
     font-size: 1.3em;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--clr-text-90);
     margin: 1.5em 0 0.8em 0;
     font-weight: 600;
 }
@@ -305,13 +295,14 @@
 .modal-body ul {
     margin: 1em 0;
     padding-left: 1.5em;
+    font-size: 1em;
 }
 
 .modal-body li {
-    font-size: 0.95em;
+    font-size: 1em;
     line-height: 1.8;
     margin-bottom: 0.8em;
-    color: rgba(0, 0, 0, 0.75);
+    color: var(--clr-text-75);
 }
 
 .modal-body li:last-child {
